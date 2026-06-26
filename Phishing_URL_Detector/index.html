@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBM SkillsBuild - Security Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="pageBody">
+    <div class="container">
+        <h1>🛡️ Cybersecurity Tool Suite</h1>
+        <p class="subtitle">IBM SkillsBuild Internship Project</p>
+        
+        <div class="tabs">
+            <button id="urlTabBtn" class="tab-btn active" onclick="switchTab('url-scanner')">URL Detector</button>
+            <button id="pwdTabBtn" class="tab-btn" onclick="switchTab('pwd-checker')">Password Checker</button>
+        </div>
+
+        <div id="url-scanner" class="tab-content">
+            <div class="input-section">
+                <input type="text" id="urlInput" placeholder="Enter URL to scan (e.g., login-secure-bank.xyz)">
+                <button onclick="scanURL()">Scan URL</button>
+            </div>
+            <div id="resultCard" class="result-card hidden">
+                <h2 id="riskLevel">Risk Level: Unknown</h2>
+                <ul id="reasonList"></ul>
+            </div>
+        </div>
+
+        <div id="pwd-checker" class="tab-content hidden">
+            <div class="input-section">
+                <input type="password" id="pwdInput" placeholder="Enter password to test strength" oninput="checkPassword()">
+            </div>
+            <div id="pwdResultCard" class="result-card hidden">
+                <h2 id="pwdStrength">Strength: Dynamic</h2>
+                <div class="strength-bar-container">
+                    <div id="strengthBar" class="strength-bar"></div>
+                </div>
+                <ul id="pwdFeedbackList"></ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
